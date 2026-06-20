@@ -8,8 +8,7 @@ a caregiving companion ("Mae") for family members caring for a loved one with ca
 > contains **no fabricated statistics, testimonials, or compliance claims** — every such
 > item is intentionally marked `[VERIFY]` / placeholder where real data would go.
 
-<!-- After you deploy, paste your live link here: -->
-**🔗 Live demo:** _coming soon_
+**🔗 Live demo: [caregiver-pal.vercel.app](https://caregiver-pal.vercel.app/)**
 
 ---
 
