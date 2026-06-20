@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #f2f1ee; /* warm light gray */
+    --surface: #ffffff;
+    --text: #232b40;
+    --text-soft: #6b7280;
+    --border: rgba(35, 43, 64, 0.08);
+  }
+
+  .dark {
+    --bg: #14161c;
+    --surface: #1b1e27;
+    --text: #eef0f4;
+    --text-soft: #9aa1b1;
+    --border: rgba(255, 255, 255, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background-color: #e0879a;
+    color: #14161c;
+  }
+
+  /* Accessible, visible focus rings everywhere (PRD a11y) */
+  :focus-visible {
+    outline: 3px solid #e0879a;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .container-cp {
+    @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
+  }
+
+  .heading-serif {
+    font-family: 'DM Serif Display', ui-serif, Georgia, serif;
+    font-weight: 400;
+  }
+
+  /* Surfaces driven by CSS vars so light/dark stays consistent */
+  .surface {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+  }
+
+  .text-muted {
+    color: var(--text-soft);
+  }
+
+  /* Primary CTA — Twilight Indigo, min 48px target, gentle lift */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-twilight px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lift active:translate-y-0 active:scale-[0.98];
+    min-height: 48px;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 px-7 py-3 text-base font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98];
+    min-height: 48px;
+    border-color: var(--border);
+    color: var(--text);
+  }
+  .btn-ghost:hover {
+    border-color: #e0879a;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      #936f9e 0%,
+      #e0879a 45%,
+      #f4a36c 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Respect reduced motion globally (PRD a11y) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

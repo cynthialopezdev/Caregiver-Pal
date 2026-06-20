@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- SEO: problem-aware intent, not "AI agent" terms (PRD §SEO) -->
+    <title>Caregiver Pal — Help keeping track of a loved one's cancer care</title>
+    <meta
+      name="description"
+      content="A warm caregiving companion that keeps track of the meds, the counts, and the appointments — right in the texting app you already use. So you can stop drowning in sticky notes and just be there."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Caregiver Pal — Someone to help you carry it" />
+    <meta
+      property="og:description"
+      content="A personal companion that keeps track of medications, counts, and appointments for family cancer caregivers — in the apps you already use."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts: Inter (UI) + DM Serif Display (emotional headlines) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Set theme before paint to avoid flash (system pref + saved choice) -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('cp-theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (saved === 'dark' || (!saved && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

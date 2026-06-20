@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Editor / OS
+.DS_Store
+.claude/
+*.log
+
+# Local env
+.env
+.env.local
+
+# Original PDF is a duplicate of docs/caregiver-pal-landing-page-prd.md
+caregiver-pal-landing-page-prd.md.pdf
